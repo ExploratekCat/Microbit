@@ -7,8 +7,8 @@ Create the setting for your activity by:
 
 
 1. Go in the variable tab and create a new variable, name it potato.
-2. Drag the block ``||Set variable to 0||``, and place it under the start block, change the number to -1.
-3. In the radio tab, select the ``||Radio radio group||`` block. 
+2. Drag the block ``||variables: Set variable to 0||``, and place it under the start block, change the number to -1.
+3. In the radio tab, select the ``||radio: radio group||`` block. 
 4. Change the number for the one given to you by your teacher. 
 
 
