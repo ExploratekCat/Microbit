@@ -1,3 +1,6 @@
+/**
+ * Setting the basics for the activity
+ */
 // Catches the potato when the opponent shakes their device
 radio.onReceivedNumber(function (receivedNumber) {
     Potato = receivedNumber
@@ -8,17 +11,19 @@ input.onButtonPressed(Button.A, function () {
 })
 // Player action
 // 
-// If you have the potato, send it to the other player 
+// If you have the potato, send it to the other player
 input.onGesture(Gesture.Shake, function () {
     if (Potato) {
         radio.sendNumber(Potato)
         Potato = -1
     }
 })
-// Setting the basics for the activity
-// 1. Establish the potato
-// 2. Connect 2 devices
-// 
+/**
+ * 2. Connect 2 devices
+ */
+/**
+ * 1. Establish the potato
+ */
 let Potato = 0
 Potato = -1
 radio.setGroup(1)
