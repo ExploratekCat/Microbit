@@ -55,9 +55,9 @@ input.onButtonPressed(Button.A, function () {
 
 ## Étape 4 :
 Dans cette dernière étape, nous allons définir ce que fait la patate.
-●	Si la partie est terminée, l'écran perdant sera affiché. 
-●	Si le joueur n'a pas la patate, l'écran sera vide.
-●	Si le joueur a la patate, un décompte commencera.
+- 	Si la partie est terminée, l'écran perdant sera affiché. 
+- 	Si le joueur n'a pas la patate, l'écran sera vide.
+- 	Si le joueur a la patate, un décompte commencera.
 1.	Dans l'onglet Base, fais glisser le bloc « toujours », sans le lier.
 2.	Dans l'onglet Logique, emboîte un bloc « si vrai alors ». Remplace la variable « vrai » par « 0 = 0 ». Ajoute deux autres de ces blocs.
 3.	Dans le premier bloc « si __ alors », remplace le premier 0 par une variable Patate.
@@ -85,4 +85,4 @@ basic.forever(function () {
 
 ## Étape 5 :
 Félicitations, tu as réussi la programmation de ton jeu Patate chaude, maintenant il est temps de jouer! 
-●	Télécharge ta programmation en la sauvegardant sur 
+- Télécharge ta programmation en la sauvegardant sur 
