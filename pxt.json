@@ -11,11 +11,16 @@
         "main.ts",
         "README.md",
         "Tutorial.md",
-        "_locales/en-GB/Tutorial.md"
+        "_locales/en-GB/Tutorial.md",
+        "Tutorial_French.md"
     ],
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "3.1.57",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],

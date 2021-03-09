@@ -1,9 +1,9 @@
 # Tutorial
 
 ## Step 1: 
-Créez les paramètres de votre activité en :
-- Établissant qu'est-ce qui constitue la patate 
-- Connectant les appareils des deux joueurs
+Create the setting for your activity by:
+- Establishing what is the potato 
+- Connecting the two players devices
 
 
 1. Go in the variable tab and create a new variable, name it potato.
