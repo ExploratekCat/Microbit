@@ -15,9 +15,7 @@
         "Code_Breaker.md",
         "Decodeur.md",
         "Light_Detection.md",
-        "Light_Detection_fr.md",
-        "Step_Counter.md",
-        "Step_Counter_fr.md"
+        "Step_Counter.md"
     ],
     "testFiles": [
         "test.ts"
