@@ -1,7 +1,7 @@
 # Tutorial_French
 
 ## Étape 1 :
-Bienvenue au tutoriel « Patate Chaude » du Musée des sciences et de la technologie du Canada.
+Bienvenue au tutoriel **« Patate Chaude »** du Musée des sciences et de la technologie du Canada.
 
 Ce jeu nécessite 2 joueurs. Vous allez coder un objet qui est envoyé d'un micro:bit à un autre en le secouant, pendant qu'un compte à rebours est enclenché. 
 Essaye de ne pas être en possession de la patate à la fin du compte à rebours. 
@@ -9,7 +9,8 @@ Essaye de ne pas être en possession de la patate à la fin du compte à rebours
 
 
 ## Étape 2 :
-Commençons par créer le contexte de ton activité :
+**Crée le contexte de ton activité**
+
 - Il faut d'abord établir ce qui constitue la patate.
 - Il faut ensuite connecter les dispositifs des deux joueurs.
 
@@ -27,7 +28,9 @@ radio.setGroup(1)
 
 
 ## Étape 3 :
-Définis l'action du joueur : si c'est toi qui as la patate, tu voudras l'envoyer à l'autre joueur. 
+**Définis l'action du joueur**
+
+Si c'est toi qui as la patate, tu voudras l'envoyer à l'autre joueur. 
 1.	Dans l'onglet Entrées, choisis et fais glisser le bloc « lorsque secouer ». Place-le sans le lier.
 2.	Choisis le bloc ``||logic: if-true-then||`` dans l'onglet Logique.
 3.	Place la variable``||variable:potato||``  sur « vrai » dans le bloc ``||logic: if-true-then||``.
@@ -45,6 +48,8 @@ input.onGesture(Gesture.Shake, function () {
 ```
 
 ## Étape 4 :
+**Lance la patate**
+
 Tu dois maintenant effectuer un réglage pour attraper la patate lorsque ton adversaire secoue son dispositif.
 1.	Dans l'onglet Entrées, choisis ``||input: on button A pressed||`` et fais-le glisser, sans le lier.
 2.	Va dans l'onglet Variables et insère le bloc ``||variable: set potato to 0||`` dans le bloc « lorsque le bouton A est pressé ».
@@ -61,8 +66,9 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 
-## Étape 5 :
-Dans cette dernière étape, nous allons définir ce que fait la patate.
+## Étape 5
+**Défini ce que fait la patate** 
+
 - 	Si la partie est terminée, l'écran perdant sera affiché. 
 - 	Si le joueur n'a pas la patate, l'écran sera vide.
 - 	Si le joueur a la patate, un décompte commencera.
@@ -79,7 +85,9 @@ basic.forever(function () {
  ```
 
 
-## Étape 6:
+## Étape 6
+**Ajoute des symboles de jeu**
+
 1. Choisis le bloc ``||basic: show icon||``  dans l'onglet Base et insère-le en dessous du premier bloc ``||logic: if potato = 0||``, puis choisis l'icône du crâne.
 2. Dans l'onglet Base, fais glisser le bloc ``||basic: clear screen||`` et insère-le sous le deuxième bloc ``||Logic:if then||``. Change le 0 à -1.
 2. Dans le troisième bloc ``||logic: if then||``, change le ``||logic: ""=""||``à ``||logic: "">""||``.
