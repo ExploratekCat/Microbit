@@ -15,6 +15,7 @@ Pour pouvoir envoyer un message, tu dois d'abord régler la fonction radio.
 radio.setTransmitPower(7)
 radio.setGroup(1)
 ```
+
 ## Step 2
 **Programmer le point**
 
@@ -33,6 +34,7 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         `)
 ```
+
 ## Step 3
 **Envoyer le point**
 
@@ -61,6 +63,7 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(100)
 })
 ```
+
 ## Step 4
 **Programmer le tiret**
  
@@ -79,6 +82,7 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         `)
 ```
+
 ## Step 5
 **Envoyer le tiret**
 
@@ -125,6 +129,7 @@ input.onGesture(Gesture.Shake, function () {
         # . . . #
         `)
 ```
+
 ## Step 7
 **Envoyer symbole de fin de message**
 
@@ -164,6 +169,8 @@ Cette dernière séquence te permettra de recevoir des messages de ton ou ta par
 3. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: vrai||``. 
 4. Tu dois maintenant créer une nouvelle ``||variable||``. Nomme-la « receivedNumber ». Remplace le premier ``||logic: 0||`` de la fonction que tu viens d'ajouter par ``||variable: receivedNumber||``.
 5. Dans le bloc ``||logic: si…alors||``, tu dois ajouter un ``||basic: montrer LEDs||`` sous la section « si ». Choisis les DEL qui formeront un point. 
+
+
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
     let receivedNumber = 0

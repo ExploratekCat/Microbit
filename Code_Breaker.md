@@ -7,8 +7,8 @@ This game requires 2 players. You will be coding symbols that make up the Morse 
 **Set radio**
 
 To send your message, set up the radio function. 
-1. In the radio tab, drag in ``||radio:radio set transmit power (7)||`` and place it in ``||basic:on start||``. 
-2. Next, select the ``||radio:radio set group||`` and place it under the first radio block.
+1. In the radio tab, drag in ``||radio: radio set transmit power (7)||`` and place it in ``||basic: on start||`` . 
+2. Next, select the ``||radio: radio set group||`` and place it under the first radio block.
 
 ```blocks 
 radio.setTransmitPower(7)
@@ -19,8 +19,8 @@ radio.setGroup(1)
 **Create your dot signal**
 
 Next, code the dot. This will get sent to your partner. 
-1. Drag in the ``||input:on button A pressed||`` to your workspace. 
-2. Next, drag in the ``||basic:Show leds||`` and nest it in ``||input:on button A pressed||``. 
+1. Drag in the ``||input: on button A pressed||`` to your workspace. 
+2. Next, drag in the ``||basic: Show leds||`` and nest it in ``||input: on button A pressed||``. 
 3. Select the squares you want to light up. Make sure it's in the shape of a dot. 
 
 ```blocks
@@ -135,6 +135,8 @@ input.onGesture(Gesture.Shake, function () {
 1. Add ``||radio: radio send number||``. Change the 0 to a 2. 
 2. Next, add ``||basic: pause(ms)||``. 
 3. Finally, add blank ``||basic: show leds||`` and ``||basic: pause (ms)||`` to finish this sequence.
+
+
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showLeds(`
@@ -156,6 +158,7 @@ input.onGesture(Gesture.Shake, function () {
     basic.pause(100)
 })
 ```
+
 ## Step 8
 **Code the radio to receive messages**
 
@@ -164,6 +167,8 @@ This last sequence of code will allow you to receive messages from your partner.
 1. To start, select ``||radio: on radio received (receiveNumber)||`` and place it in your workspace. 
 2. Next, select ``||logic: if true then||``. Nest this block within ``||radio: on radio received||``. 
 3. You need to change the true variable in your logic function. Place ``||logic: 0=0||`` over ``||logic: true||``.
+
+
 ```blocks
 radio.onReceivedString(function (receivedNumber) {
     let receivedNumber = 0
