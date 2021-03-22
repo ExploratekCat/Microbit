@@ -1,5 +1,5 @@
 {
-    "name": "Hot Potato / Patate Chaude ",
+    "name": "Hot Potato / Patate Chade ",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -15,15 +15,13 @@
         "Code_Breaker.md",
         "Decodeur.md",
         "Light_Detection.md",
-        "Step_Counter.md"
+        "Step_Counter.md",
+        "Compteur_de_pas.md",
+        "Capteur_de_lumieres.md"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "targetVersions": {
-        "target": "3.1.59",
-        "targetId": "microbit"
-    },
     "supportedTargets": [
         "microbit"
     ],
