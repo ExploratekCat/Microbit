@@ -16,30 +16,16 @@ radio.setGroup(1)
 ```
 
 ## Step 2
-**Create your dot signal**
+**Create and send your dot signal **
 
-Next, code the dot. This will get sent to your partner. 
+Next, code the dot signal. This will get sent to your partner. 
+
 1. Drag in the ``||input: on button A pressed||`` to your workspace. 
-2. Next, drag in the ``||basic: Show leds||`` and nest it in ``||input: on button A pressed||``. 
+2. Next, drag in the ``||basic:Show leds||`` and nest it in ``||input: on button A pressed||``. 
 3. Select the squares you want to light up. Make sure it's in the shape of a dot. 
-
-```blocks
-input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # # # .
-        . # # # .
-        . . . . .
-        `)
-```
-
-## Step 3
-**Send your dot signal **
-
-1. In the radio function, select the ``||radio: radio send number (0)||``. Place this under the ``||basic: show leds||``.
-2. Add the ``||basic: pause (ms)||`` to the sequence. 
-3. Finally, add a second ``||basic: show leds||`` and ``||basic: pause (ms)||`` as the last part of the sequence. This will create a pause between your symbols. 
+4. In the radio function, select the ``||radio: radio send number (0)||``. Place this under the ``||basic: show leds||``.
+5. Add the ``||basic: pause (ms)||`` to the sequence. 
+6. Finally, add a second ``||basic: clearScreen||`` and ``||basic: pause (ms)||`` to end your  sequence. This will create a pause between your symbols. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -52,42 +38,21 @@ input.onButtonPressed(Button.A, function () {
         `)
     radio.sendNumber(0)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
 
-## Step 4
-**Create your dash signal**
+## Step 3
+**Create and send your dash signal**
 
 This section of code for your dash is going to look almost the same as the one you just did with a few minor changes.
 
 1. You're going to drag in a new ``||input: on button A pressed||``. Change the A to B. 
-2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make a dash. 
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . # # # .
-        . . . . .
-        . . . . .
-        `)
-```
-
-## Step 5
-**Send your dash signal**
-
-1. Next, add ``||radio: radio send number||``. Change the 0 to a 1. 
-2. Add ``||basic: pause (ms)||``. 
-3. Finally, add a blank ``||basic: show leds||`` and one more ``||basic: pause(ms)||`` to finish this sequence. 
+2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make a dash.
+3. Next, add ``||radio: radio send number||``. Change the 0 to a 1. 
+4. Add ``||basic: pause (ms)||``. 
+5. Finally, add a blank ``||basic: clearScreen||`` and one more ``||basic: pause(ms)||`` to finish this sequence.  
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
@@ -100,42 +65,20 @@ input.onButtonPressed(Button.B, function () {
         `)
     radio.sendNumber(1)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
 
-## Step 6
+## Step 4
 **Create your message stop gap**
-
 So your partner knows when your message is finished, we are going to code one more symbol, a gap known in Morse code as a stop, doing the exact same thing as the last two sequences.
+
 1. Drag in ``||input: on shake||``. 
 2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make an X. 
-
-```blocks
-input.onGesture(Gesture.Shake, function () {
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `)
-```
-
-## Step 7
-**Send your message stop gap **
-
-1. Add ``||radio: radio send number||``. Change the 0 to a 2. 
-2. Next, add ``||basic: pause(ms)||``. 
-3. Finally, add blank ``||basic: show leds||`` and ``||basic: pause (ms)||`` to finish this sequence.
-
+3. Add ``||radio: radio send number||``. Change the 0 to a 2. 
+4. Next, add ``||basic: pause(ms)||``. 
+5. Finally, add blank ``||basic: clearScreen||`` and ``||basic: pause (ms)||`` to finish this sequence.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -148,42 +91,24 @@ input.onGesture(Gesture.Shake, function () {
         `)
     radio.sendNumber(2)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
 
-## Step 8
-**Code the radio to receive messages**
+## Step 5
+**Create your Morse Code receiver**
 
-This last sequence of code will allow you to receive messages from your partner. Pay close attention to follow the steps below. Use the hint button if you need a visual.  
 
 1. To start, select ``||radio: on radio received (receiveNumber)||`` and place it in your workspace. 
-2. Next, select ``||logic: if true then||``. Nest this block within ``||radio: on radio received||``. 
+2. Next, select and add the ``||logic: if true then||`` bloc underneath. 
 3. You need to change the true variable in your logic function. Place ``||logic: 0=0||`` over ``||logic: true||``.
+4. Drag in the ``||variable: radio received||``into the first 0 of the ``||logic: 0||`` of the function you just added 
+5. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot. 
 
 
 ```blocks
-radio.onReceivedString(function (receivedNumber) {
-    let receivedNumber = 0
-    if (receivedNumber == 0)
-```
-
-## Step 8
-**Receive Dot**
-
-1. Now you need to make a new ``||variable||``. Name it receivedNumber. Replace the first ``||logic: 0||`` of the function you just added with ``||variable: receivedNumber||``.
-2. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot. 
-
-```blocks
-radio.onReceivedString(function (receivedNumber) {
-    let receivedNumber = 0
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -192,48 +117,22 @@ radio.onReceivedString(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
+    
 ```
-## Step 9
-**Receive dash**
 
-Now we'll do the same for the dash.
 
-1. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
-2. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 1. 
-3. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
+##Step 6
+**Create your Morse Code receiver- *continued* **
+
+6. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
+7. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
+8. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
+9. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
+10. Add ``||basic: show leds||`` and select the squares to make your X symbol.
+11. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
 
 ```blocks
-radio.onReceivedString(function (receivedNumber) {
-    let receivedNumber = 0
-    if (receivedNumber == 0) {
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # # # .
-            . # # # .
-            . . . . .
-            `)
-    } else if (receivedNumber == 1) {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . # # # .
-            . . . . .
-            . . . . .
-            `)
-```
-## Step 10
-**Receive stop gap**
-
-And finally, we'll do the same thing for the stop. 
-
-1. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
-2. Add ``||basic: show leds||`` and select the squares to make your X symbol.
-3. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: show leds||``.   
-
-```blocks
-radio.onReceivedString(function (receivedString) {
-    let receivedNumber = 0
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -258,18 +157,14 @@ radio.onReceivedString(function (receivedString) {
             . # . # .
             # . . . #
             `)
+    } else {
+        basic.pause(100)
+        basic.clearScreen()
     }
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
 })
 ```
-### Step 11
+
+### Step 7
 **One Last Step**
 
 Congratulations, you have completed the Code Breaker activity. Now it's time to send some secret messages!
