@@ -15,9 +15,9 @@ Essaye de ne pas être en possession de la patate à la fin du compte à rebours
 - Il faut ensuite connecter les dispositifs des deux joueurs.
 
 
-1.	Dans l'onglet Variables, clique sur « Créer une variable ». Appelle-la ``||variable:potato||``.
-2.	Fais glisser le bloc ``||Set variable to 0||`` et place-le sous le bloc de démarrage. Change le chiffre à -1.
-3.	Dans l'onglet Radio, choisis le bloc ``||Radio radio group||``. Place-le sous le bloc « définir patate ».
+1.	Dans l'onglet ``|| Variables ||``, clique sur « Créer une variable ». Appelle-la ``||variable:potato||``.
+2.	Fais glisser le bloc ``||Set variable to 0||`` et place-le sous le bloc de démarrage ``|| Basic:on start||``. Change le chiffre à -1.
+3.	Dans l'onglet ``|| Radio ||``, choisis le bloc ``||Radio radio group||``. Place-le sous le bloc « définir patate ».
 4.	Change le chiffre à celui que ton enseignant ou enseignante t'a donné.
 
 ```blocks
@@ -31,11 +31,11 @@ radio.setGroup(1)
 **Définis l'action du joueur**
 
 Si c'est toi qui as la patate, tu voudras l'envoyer à l'autre joueur. 
-1.	Dans l'onglet Entrées, choisis et fais glisser le bloc « lorsque secouer ». Place-le sans le lier.
+1.	Dans l'onglet ``|| Basic||``, choisis et fais glisser le bloc « lorsque secouer ». Place-le sans le lier.
 2.	Choisis le bloc ``||logic: if-true-then||`` dans l'onglet Logique.
 3.	Place la variable``||variable:potato||``  sur « vrai » dans le bloc ``||logic: if-true-then||``.
-4.	Dans l'onglet Radio, ajoute le bloc ``||radio: radio send number||`` en dessous du bloc « si Patate alors ». Ajoute une variable ``||variable:potato||`` dans le bloc Radio.
-5.	Dans l'onglet Variables, choisis et fais glisser le bloc ``||variable:set potato to||`` en dessous du bloc « radio ». Change le chiffre à -1 .
+4.	Dans l'onglet ``|| Radio ||``, ajoute le bloc ``||radio: radio send number||`` en dessous du bloc « si Patate alors ». Ajoute une variable ``||variable:potato||`` dans le bloc Radio.
+5.	Dans l'onglet ``|| Variables ||``, choisis et fais glisser le bloc ``||variable:set potato to||`` en dessous du bloc ``|| radio ||``. Change le chiffre à -1 .
 
 
 ```blocks 
@@ -51,9 +51,11 @@ input.onGesture(Gesture.Shake, function () {
 **Lance la patate**
 
 Tu dois maintenant effectuer un réglage pour attraper la patate lorsque ton adversaire secoue son dispositif.
-1.	Dans l'onglet Entrées, choisis ``||input: on button A pressed||`` et fais-le glisser, sans le lier.
-2.	Va dans l'onglet Variables et insère le bloc ``||variable: set potato to 0||`` dans le bloc « lorsque le bouton A est pressé ».
-3.	Dans l'onglet Maths, choisis le bloc ``||math: pick random 0 to 10||`` et insère-le dans le champ « 0 » puis change le tout à « 10 à 20  ».
+1. Dans l'onglet Entrées, choisis ``||input: on button A pressed||`` et fais-le glisser, sans le lier.
+2. Va dans l'onglet Variables et insère le bloc ``||variable: set potato to 0||`` dans le bloc « lorsque le bouton A est pressé ».
+3. Dans l'onglet Maths, choisis le bloc ``||math: pick random 0 to 10||`` et insère-le dans le champ « 0 » puis change le tout à « 10 à 20  ».
+4. Va dans l'onglet ``||radio||``  et ajoute le bloc ``||radio: on radio onReceivedNumber||`` dans l'espace sans le lier. 
+5. Ajoute le bloc ``||variable: set potato to 0||`` de l'onglet ``||variable||`` juste en dessous, puis fait glisser l'icone ``||receivedNumber||`` dans ce nouveau bloc pour remplacer le 0. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {

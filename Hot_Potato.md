@@ -52,7 +52,8 @@ Set your device to catch the potato when the opponent shakes their own device
 1. In the input tab, select the ``||input: on button A pressed||`` block and drag in below, unthetered 
 2. Go in the variable tab and nest the ``||variable: set potato to 0||`` block
 3. In the math tab, select ``||math: pick random 0 to 10||`` block, add it in the space for 0 and change it to indicate 10 to 20
-
+4. Go in the ``||radio||`` tab and add the ``||radio: on radio onReceivedNumber||`` block, place it unthethered. 
+5. In it, nest the block ``||variable: set potato to 0||`` from the ``||variable||`` tab, then drag the ``||receivedNumber||``into this block to replace the 0. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
