@@ -124,12 +124,12 @@ radio.onReceivedNumber(function (receivedNumber) {
 ##Step 6
 **Create your Morse Code receiver- *continued* **
 
-6. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
-7. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
-8. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
-9. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
-10. Add ``||basic: show leds||`` and select the squares to make your X symbol.
-11. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
+1. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
+2. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
+3. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
+4. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
+5. Add ``||basic: show leds||`` and select the squares to make your X symbol.
+6. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
