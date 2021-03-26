@@ -97,6 +97,7 @@ input.onGesture(Gesture.Shake, function () {
 ```
 
 ## Step 5
+
 **Create your Morse Code receiver**
 
 
@@ -104,8 +105,22 @@ input.onGesture(Gesture.Shake, function () {
 2. Next, select and add the ``||logic: if true then||`` bloc underneath. 
 3. You need to change the true variable in your logic function. Place ``||logic: 0=0||`` over ``||logic: true||``.
 4. Drag in the ``||variable: radio received||``into the first 0 of the ``||logic: 0||`` of the function you just added 
-5. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot. 
 
+
+
+```blocks
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+        
+```
+
+## Step 6
+**Create your Morse Code receiver- *continued* **
+
+1. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot.  
+2. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
+3. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
+4. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -117,19 +132,22 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
-    
+    } else if (receivedNumber == 1) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
 ```
 
+## Step 7
 
-##Step 6
 **Create your Morse Code receiver- *continued* **
-
-1. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
-2. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
-3. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
-4. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
-5. Add ``||basic: show leds||`` and select the squares to make your X symbol.
-6. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
+1. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
+2. Add ``||basic: show leds||`` and select the squares to make your X symbol.
+3. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -164,7 +182,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-### Step 7
+### Step 8
 **One Last Step**
 
 Congratulations, you have completed the Code Breaker activity. Now it's time to send some secret messages!
