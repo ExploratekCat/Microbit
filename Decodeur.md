@@ -25,7 +25,7 @@ Maintenant, tu dois programmer le point du code morse que tu enverras à ton co�
 3. Choisis les carrés qui devront s'allumer. Assure-toi qu'ensemble, ils ont la forme d'un point. 
 4. Dans l'onglet Radio, choisis le bloc ``||radio: envoyer le nombre (0) par radio||`` et place-le sous le bloc ``||basic: montrer LEDs||``.
 5. Ajoute un bloc ``||basic: pause (ms)||`` à la séquence. 
-6. Enfin, ajoute un deuxième ``||basic: clearScreen||`` et un autre ``||basic: pause (ms)||`` pour compléter la séquence. 
+6. Enfin, ajoute un deuxième ``||basic: effacer l'écran||`` et un autre ``||basic: pause (ms)||`` pour compléter la séquence. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -77,9 +77,9 @@ input.onButtonPressed(Button.B, function () {
 Pour que ton ou ta partenaire sache que ton message est terminé, nous allons programmer un autre symbole en suivant les mêmes étapes que les deux dernières séquences.
 1. Fais glisser un bloc ``||input: lorsque secouer||``. 
 2. Ajoute un nouveau bloc ``||basic: montrer LEDs||`` à la séquence. Choisis les carrés qui formeront un X. 
-1. Ajoute un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **2**. 
-2. Ajoute ensuite un bloc ``||basic: pause (ms)||``. 
-3. Enfin, ajoute un bloc ``||basic: montrer LEDs||`` vide et un bloc ``||basic: pause (ms)||`` pour terminer la séquence.
+3. Ajoute un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **2**. 
+4. Ajoute ensuite un bloc ``||basic: pause (ms)||``. 
+5. Enfin, ajoute un bloc ``||basic: clearScreen||`` vide et un bloc ``||basic: pause (ms)||`` pour terminer la séquence.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -97,7 +97,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 ## Step 5
-**Create your Morse Code receiver**
+**Programmer la radio pour recevoir des messages**
 
 1. Pour commencer, choisis le ``||radio: on radio received (receiveNumber)||`` et dépose-le dans ton espace de travail. 
 2. Ensuite, choisis le bloc ``||logic: if true then||``. Insère-le dans le bloc en dessous.  
