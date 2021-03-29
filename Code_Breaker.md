@@ -100,7 +100,6 @@ input.onGesture(Gesture.Shake, function () {
 
 **Create your Morse Code receiver**
 
-
 1. To start, select ``||radio: on radio received (receiveNumber)||`` and place it in your workspace. 
 2. Next, select and add the ``||logic: if true then||`` bloc underneath. 
 3. You need to change the true variable in your logic function. Place ``||logic: 0=0||`` over ``||logic: true||``.

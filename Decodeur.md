@@ -17,30 +17,15 @@ radio.setGroup(1)
 ```
 
 ## Step 2
-**Programmer le point**
+**Programmer et envoyer le point**
 
 Maintenant, tu dois programmer le point du code morse que tu enverras à ton coéquipier.
 1. Fais glisser le bloc ``||input: lorsque le bouton A est pressé||`` dans ton espace de travail. 
 2. Ensuite, fais glisser le bloc ``||basic: montrer LEDs||`` et insère-le dans ``||input: lorsque le bouton A est pressé||``. 
 3. Choisis les carrés qui devront s'allumer. Assure-toi qu'ensemble, ils ont la forme d'un point. 
-
-```blocks
-input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # # # .
-        . # # # .
-        . . . . .
-        `)
-```
-
-## Step 3
-**Envoyer le point**
-
-1. Dans l'onglet Radio, choisis le bloc ``||radio: envoyer le nombre (0) par radio||`` et place-le sous le bloc ``||basic: montrer LEDs||``.
-2. Ajoute un bloc ``||basic: pause (ms)||`` à la séquence. 
-3. Enfin, ajoute un deuxième ``||basic: montrer LEDs||`` et un autre ``||basic: pause (ms)||`` pour compléter la séquence. Tu n'as pas à choisir de carrés cette fois-ci. Cela correspond à une pause entre tes codes
+4. Dans l'onglet Radio, choisis le bloc ``||radio: envoyer le nombre (0) par radio||`` et place-le sous le bloc ``||basic: montrer LEDs||``.
+5. Ajoute un bloc ``||basic: pause (ms)||`` à la séquence. 
+6. Enfin, ajoute un deuxième ``||basic: clearScreen||`` et un autre ``||basic: pause (ms)||`` pour compléter la séquence. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -53,42 +38,22 @@ input.onButtonPressed(Button.A, function () {
         `)
     radio.sendNumber(0)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
 
-## Step 4
-**Programmer le tiret**
+## Step 3
+**Programmer et envoyer le tiret**
  
 À part quelques petites différences, les étapes de programmation du tiret sont presque les mêmes que celles pour le point. 
  
-1. Fais glisser un nouveau bloc ``||input: lorsque le bouton A est pressé||``. Remplace le A par un B. 
-2. Ajoute un nouveau bloc ``||basic: pause (ms)||`` à la séquence. Choisis les carrés qui formeront un tiret. Clique sur le bouton d'indice si tu as des doutes. 
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . # # # .
-        . . . . .
-        . . . . .
-        `)
-```
-
-## Step 5
-**Envoyer le tiret**
-
-1. Ajoute ensuite un bloc ``||radio: envoyer le nombre par radio||``. Remplace le 0 par un 1.
-2. Ajoute un bloc ``||basic: pause (ms)||``. 
-3. Enfin, ajoute un bloc ``||basic: montrer LEDs||`` vide et un autre ``||basic: pause (ms)||`` pour terminer la séquence. 
+1. Fais glisser un nouveau bloc ``||input: lorsque le bouton A est pressé||``. Remplace le **A** par un **B**. 
+2. Ensuite, fais glisser le bloc ``||basic: montrer LEDs||`` et insère-le dans ``||input: lorsque le bouton B est pressé||``. 
+3. Choisis les carrés qui formeront un tiret. Clique sur le bouton d'indice si tu as des doutes. 
+4. Ajoute un nouveau bloc ``||basic: pause (ms)||`` à la séquence. 
+5. Ajoute ensuite un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **1**.
+6. Enfin, ajoute un bloc ``||basic: clearScreen||`` vide et un autre ``||basic: pause (ms)||`` pour terminer la séquence. 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
@@ -101,39 +66,18 @@ input.onButtonPressed(Button.B, function () {
         `)
     radio.sendNumber(1)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
 
-## Step 6
+## Step 4
 **Programmer un symbole de fin de message**
 
 Pour que ton ou ta partenaire sache que ton message est terminé, nous allons programmer un autre symbole en suivant les mêmes étapes que les deux dernières séquences.
 1. Fais glisser un bloc ``||input: lorsque secouer||``. 
 2. Ajoute un nouveau bloc ``||basic: montrer LEDs||`` à la séquence. Choisis les carrés qui formeront un X. 
-
-```blocks
-input.onGesture(Gesture.Shake, function () {
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `)
-```
-
-## Step 7
-**Envoyer symbole de fin de message**
-
-1. Ajoute un bloc ``||radio: envoyer le nombre par radio||``. Remplace le 0 par un 2. 
+1. Ajoute un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **2**. 
 2. Ajoute ensuite un bloc ``||basic: pause (ms)||``. 
 3. Enfin, ajoute un bloc ``||basic: montrer LEDs||`` vide et un bloc ``||basic: pause (ms)||`` pour terminer la séquence.
 
@@ -148,54 +92,34 @@ input.onGesture(Gesture.Shake, function () {
         `)
     radio.sendNumber(2)
     basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
     basic.pause(100)
 })
 ```
+## Step 5
+**Create your Morse Code receiver**
 
-## Step 8
-**Programmer la radio pour recevoir un point**
- 
-Cette dernière séquence te permettra de recevoir des messages de ton ou ta partenaire. Suis les étapes très attentivement, et utilise le bouton d'indice si tu as besoin d'une aide visuelle. 
- 
-1. Pour commencer, choisis le bloc ``||radio: quand une donnée est reçue par radio (receiveNumber)||`` et dépose-le dans ton espace de travail. 
-2. Ensuite, choisis le bloc ``||logic: si vrai alors||``. Insère-le dans le bloc ``||radio: quand une donnée est reçue par radio||``. 
-3. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: vrai||``. 
-4. Tu dois maintenant créer une nouvelle ``||variable||``. Nomme-la « receivedNumber ». Remplace le premier ``||logic: 0||`` de la fonction que tu viens d'ajouter par ``||variable: receivedNumber||``.
-5. Dans le bloc ``||logic: si…alors||``, tu dois ajouter un ``||basic: montrer LEDs||`` sous la section « si ». Choisis les DEL qui formeront un point. 
-
+1. Pour commencer, choisis le ``||radio: on radio received (receiveNumber)||`` et dépose-le dans ton espace de travail. 
+2. Ensuite, choisis le bloc ``||logic: if true then||``. Insère-le dans le bloc en dessous.  
+3. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: true||``.
+4. Remplace le premier **0** du bloc ``||logic: 0||`` en faisant glisser la variable ``||variable: radio received||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
-    let receivedNumber = 0
     if (receivedNumber == 0) {
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # # # .
-            . # # # .
-            . . . . .
-            `)
-    }
+        
 ```
 
-## Step 9
-**Programmer la radio pour recevoir un tiret**
+## Step 6
+**Programmer la radio pour recevoir des messages- *suite* **
+1. Dans le bloc ``||logic: if…then||``, tu dois ajouter ``||basic: show leds||`` sous la section « si ». Choisis les DEL qui formeront un point. 
+2. Clique sur le + au bas du bloc ``||logic: if...then||`` afin d'ajouter une autre condition à ta variable.
+3. Remplace le ``||logic: true||`` par ``||logic: 0=0||``, puis remplace le premier **0** par ``||variable: receivedNumber||`` en la faisant glisser. Remplace le deuxième **0** par un **1**. 
+4. Ajoute un deuxième ``||basic: show leds||`` à la séquence. Choisis les carrés qui formeront un tiret. 
 
-1. Clique sur le + au bas du bloc ``||logic: si...alors||`` afin d'ajouter une autre condition à ta variable.
-2. Remplace le ``||logic: vrai||`` par ``||logic: 0=0||``, puis remplace le premier 0 par ``||variable: receivedNumber||``. Remplace le deuxième 0 par un 1. 
-3. Ajoute un deuxième ``||basic: montrer LEDs||`` à la séquence. Choisis les carrés qui formeront un tiret. 
-4. Clique sur le + encore une fois afin d'ajouter un autre bloc ``||logic: si...alors||``. Ajoute un bloc ``||logic: 0=0||`` et remplace le premier 0 par ``||variable: receivedNumber||``. Remplace le deuxième 0 par un 2.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
-    let receivedNumber = 0
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -204,8 +128,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
-    }
-    if (receivedNumber == 1) {
+    } else if (receivedNumber == 1) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -213,18 +136,17 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-    }
 ```
 
-## Step 10
-**Programmer la radio pour recevoir le symbole pour fin de message**
+## Step 7
 
-1. Ajoute un bloc ``||basic: montrer LEDs||`` et choisis les carrés qui formeront le symbole X.
-2. La toute dernière étape est d'ajouter un bloc ``||basic: pause (ms)||`` puis un bloc ``||basic: montrer LEDs||`` vide. 
+**Programmer la radio pour recevoir des messages- *suite* **
+1. Clique sur le + encore une fois afin d'ajouter un autre bloc ``||logic: if...then||``. Ajoute un bloc ``||logic: 0=0||``et remplace le premier **0** par ``||variable: receivedNumber||``. Remplace le deuxième **0** par un **2**.
+2. Ajoute un bloc ``||basic: show leds||`` et choisis les carrés qui formeront le symbole X.
+3. La toute dernière étape est d'ajouter un bloc ``||basic: pause (ms)||`` puis un bloc ``||basic: clearScreen||``vide. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
-    let receivedNumber = 0
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -233,8 +155,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
-    }
-    if (receivedNumber == 1) {
+    } else if (receivedNumber == 1) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -242,8 +163,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-    }
-    if (receivedNumber == 2) {
+    } else if (receivedNumber == 2) {
         basic.showLeds(`
             # . . . #
             . # . # .
@@ -251,17 +171,14 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # . # .
             # . . . #
             `)
+    } else {
+        basic.pause(100)
+        basic.clearScreen()
     }
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
 })
 ```
+
+
 ## Step 11 
 **Une dernière étape**
 
