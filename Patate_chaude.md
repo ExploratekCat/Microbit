@@ -15,7 +15,7 @@ Essaye de ne pas être en possession de la patate à la fin du compte à rebours
 - Il faut ensuite connecter les dispositifs des deux joueurs.
 
 
-1.	Dans l'onglet ``|| Variables ||``, clique sur « Créer une variable ». Appelle-la ``||variable:potato||``.
+1.	Dans l'onglet ``|| Variables ||``, clique sur « Créer une variable ». Appelle-la ``||variable:potate||``.
 2.	Fais glisser le bloc ``||Set variable to 0||`` et place-le sous le bloc de démarrage ``|| Basic:on start||``. Change le chiffre à -1.
 3.	Dans l'onglet ``|| Radio ||``, choisis le bloc ``||Radio radio group||``. Place-le sous le bloc « définir patate ».
 4.	Change le chiffre à celui que ton enseignant ou enseignante t'a donné.

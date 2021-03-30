@@ -53,7 +53,7 @@ input.onButtonPressed(Button.A, function () {
 3. Choisis les carrés qui formeront un tiret. Clique sur le bouton d'indice si tu as des doutes. 
 4. Ajoute un nouveau bloc ``||basic: pause (ms)||`` à la séquence. 
 5. Ajoute ensuite un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **1**.
-6. Enfin, ajoute un bloc ``||basic: clearScreen||`` vide et un autre ``||basic: pause (ms)||`` pour terminer la séquence. 
+6. Enfin, ajoute un bloc ``||basic: effacer l'écran||`` vide et un autre ``||basic: pause (ms)||`` pour terminer la séquence. 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
@@ -79,7 +79,7 @@ Pour que ton ou ta partenaire sache que ton message est terminé, nous allons pr
 2. Ajoute un nouveau bloc ``||basic: montrer LEDs||`` à la séquence. Choisis les carrés qui formeront un X. 
 3. Ajoute un bloc ``||radio: envoyer le nombre par radio||``. Remplace le **0** par un **2**. 
 4. Ajoute ensuite un bloc ``||basic: pause (ms)||``. 
-5. Enfin, ajoute un bloc ``||basic: clearScreen||`` vide et un bloc ``||basic: pause (ms)||`` pour terminer la séquence.
+5. Enfin, ajoute un bloc ``||basic: effacer l'écran||`` vide et un bloc ``||basic: pause (ms)||`` pour terminer la séquence.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -99,28 +99,30 @@ input.onGesture(Gesture.Shake, function () {
 ## Step 5
 **Programmer la radio pour recevoir des messages**
 
-1. Pour commencer, choisis le ``||radio: on radio received (receiveNumber)||`` et dépose-le dans ton espace de travail. 
-2. Ensuite, choisis le bloc ``||logic: if true then||``. Insère-le dans le bloc en dessous.  
-3. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: true||``.
-4. Remplace le premier **0** du bloc ``||logic: 0||`` en faisant glisser la variable ``||variable: radio received||``.
+1. Pour commencer, choisis le ``||radio: quand une donnée est reçu par radio (receiveNumber)||`` et dépose-le dans ton espace de travail. 
+2. Choisi l'option "Créer une variable" dans l'onglet ``||variable||``et nomme là "appelRadio". 
+3. Remplace la ``||variable: radio received||`` par ``||variable:appelRadio ||``. 
+3. Ensuite, choisis le bloc ``||logic: si vrai alors||``. Insère-le dans le bloc en dessous.  
+4. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: vrai||``.
+5. Remplace le premier **0** du bloc ``||logic: 0||`` en faisant glisser la variable ``||variable: appelRadio||``.
 
 ```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == 0) {
+radio.onReceivedNumber(function (appelRadio) {
+    if (appelRadio == 0) {
         
 ```
 
 ## Step 6
 **Programmer la radio pour recevoir des messages- *suite* **
-1. Dans le bloc ``||logic: if…then||``, tu dois ajouter ``||basic: show leds||`` sous la section « si ». Choisis les DEL qui formeront un point. 
-2. Clique sur le + au bas du bloc ``||logic: if...then||`` afin d'ajouter une autre condition à ta variable.
-3. Remplace le ``||logic: true||`` par ``||logic: 0=0||``, puis remplace le premier **0** par ``||variable: receivedNumber||`` en la faisant glisser. Remplace le deuxième **0** par un **1**. 
-4. Ajoute un deuxième ``||basic: show leds||`` à la séquence. Choisis les carrés qui formeront un tiret. 
+1. Dans le bloc ``||logic: si…alors||``, tu dois ajouter ``||basic: montrer LEDs||`` sous la section « si ». Choisis les DEL qui formeront un point. 
+2. Clique sur le + au bas du bloc ``||logic: si...alors||`` afin d'ajouter une autre condition à ta variable.
+3. Remplace le ``||logic: vrai||`` par ``||logic: 0=0||``, puis remplace le premier **0** par ``||variable: appelRadio||`` en la faisant glisser. Remplace le deuxième **0** par un **1**. 
+4. Ajoute un deuxième ``||basic: montrer LEDs||`` à la séquence. Choisis les carrés qui formeront un tiret. 
 
 
 ```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == 0) {
+radio.onReceivedNumber(function (appelRadio) {
+    if (appelRadio == 0) {
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -128,7 +130,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
-    } else if (receivedNumber == 1) {
+    } else if (appelRadio == 1) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -141,9 +143,9 @@ radio.onReceivedNumber(function (receivedNumber) {
 ## Step 7
 
 **Programmer la radio pour recevoir des messages- *suite* **
-1. Clique sur le + encore une fois afin d'ajouter un autre bloc ``||logic: if...then||``. Ajoute un bloc ``||logic: 0=0||``et remplace le premier **0** par ``||variable: receivedNumber||``. Remplace le deuxième **0** par un **2**.
-2. Ajoute un bloc ``||basic: show leds||`` et choisis les carrés qui formeront le symbole X.
-3. La toute dernière étape est d'ajouter un bloc ``||basic: pause (ms)||`` puis un bloc ``||basic: clearScreen||``vide. 
+1. Clique sur le + encore une fois afin d'ajouter un autre bloc ``||logic: si...alors||``. Ajoute un bloc ``||logic: 0=0||``et remplace le premier **0** par ``||variable: appelRadio||``. Remplace le deuxième **0** par un **2**.
+2. Ajoute un bloc ``||basic: montrer LEDs||`` et choisis les carrés qui formeront le symbole X.
+3. La toute dernière étape est d'ajouter un bloc ``||basic: pause (ms)||`` puis un bloc ``||basic: effacer l'écran||``vide. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
