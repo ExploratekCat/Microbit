@@ -101,7 +101,7 @@ input.onGesture(Gesture.Shake, function () {
 
 1. Pour commencer, choisis le ``||radio: quand une donnée est reçu par radio (receiveNumber)||`` et dépose-le dans ton espace de travail. 
 2. Choisi l'option "Créer une variable" dans l'onglet ``||variable||``et nomme là "appelRadio". 
-3. Remplace la ``||variable: radio received||`` par ``||variable:appelRadio ||``. 
+3. Remplace le bloc ``||variable: radio received||`` par ``||variable:appelRadio ||``. 
 3. Ensuite, choisis le bloc ``||logic: si vrai alors||``. Insère-le dans le bloc en dessous.  
 4. Tu dois modifier la variable « vrai » dans la fonction logique. Place un bloc ``||logic: 0=0||`` par-dessus ``||logic: vrai||``.
 5. Remplace le premier **0** du bloc ``||logic: 0||`` en faisant glisser la variable ``||variable: appelRadio||``.
