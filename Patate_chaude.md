@@ -17,7 +17,7 @@ Essaye de ne pas être en possession de la patate à la fin du compte à rebours
 
 1.	Dans l'onglet ``|| Variables ||``, clique sur « Créer une variable ». Appelle-la ``||variable:patate||``.
 2.	Fais glisser le bloc ``||variable: définir patate à 0||`` et place-le sous le bloc de démarrage ``|| Basic: au démarrage||``. Change le chiffre à -1.
-3.	Dans l'onglet ``|| Radio ||``, choisis le bloc ``||radio: radio définir groupe||``. Place-le sous le bloc `||variable: définir patate à 0||``.
+3.	Dans l'onglet ``|| Radio ||``, choisis le bloc ``||radio: radio définir groupe||``. Place-le sous le bloc ``||variable: définir patate à 0||``.
 4.	Change le chiffre à celui que ton enseignant ou enseignante t'a donné.
 
 ```blocks

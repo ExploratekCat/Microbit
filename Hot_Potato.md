@@ -12,7 +12,7 @@ Try not to be holding the potato when the timer ends.
 - Establish what is the potato 
 - Connect the two players devices
 
-1. Go in the variable tab and create a new variable, name it ``||variable:potato||``.
+1. Go in the variable tab and create a new variable, name it ``||variable: potato||``.
 2. Drag the block ``||variables: set variable to 0||``, and place it under the start block, change the number to -1.
 3. In the radio tab, select the ``||radio: radio group||`` block. 
 4. Change the number for the one given to you by your teacher. 
@@ -30,9 +30,9 @@ radio.setGroup(1)
 If you have the potato, send it to the other player 
 1. In the Input tab, select and drag the ``||input: on shake||`` block, place it unthetered
 2. Select the ``||logic: if-true-then||`` block from the Logic tab
-3. Add the ``||variable:potato||`` the first location on the ``||logic: if-true-then||`` block
-4. In the radio tab, drag the ``||radio: radio send number||`` block, add a ``||variable:potato||`` variable in that block 
-5. Drag from the variable tab the ``||variable:set potato to||`` block and change the number to -1 
+3. Add the ``||variable: potato||`` the first location on the ``||logic: if-true-then||`` block
+4. In the radio tab, drag the ``||radio: radio send number||`` block, add a ``||variable: potato||`` variable in that block 
+5. Drag from the variable tab the ``||variable: set potato to||`` block and change the number to -1 
 
 
 ```blocks 
@@ -89,10 +89,10 @@ basic.forever(function () {
 ## Step 6:
 **Add display symbols- *continued* **
 
-4.  Select the ``||basic: show icon||`` block from Basics, and add it underneath the first ``||logic: if potato = 0||`` block. Choose the Skull icon. 
+4.  Select the ``||basic: show||`` block from Basics, and add it underneath the first ``||logic: if potato = 0||`` block. Choose the Skull icon. 
 5. Drag in ``||basic: clear screen||`` block from Basics under the second ``||Logic:if then||`` block
 6. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
-7. Drag a ``||basic: show icon||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
+7. Drag a ``||basic: show||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
 8. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
 
 
