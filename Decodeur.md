@@ -1,9 +1,9 @@
-# Décodeur
+# Step 1
 Bienvenue au tutoriel **« Décodeur »** du Musée des sciences et de la technologie du Canada.
 
 Cette activité nécessite 2 joueurs. Tu vas coder les symboles qui composent le code Morse, un point et un tiret. Tu vas pouvoir utiliser ces symboles pour envoyer des messages codés à ton partenaire. Peux-tu le déchiffrer ?
 
-## Step 1
+## Step 2
 **Définir le groupe radio**
 
 Pour pouvoir envoyer un message, tu dois d'abord régler la fonction radio.
@@ -16,7 +16,7 @@ radio.setTransmitPower(7)
 radio.setGroup(1)
 ```
 
-## Step 2
+## Step 3
 **Programmer et envoyer le point**
 
 Maintenant, tu dois programmer le point du code morse que tu enverras à ton coéquipier.
@@ -43,7 +43,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 3
+## Step 4
 **Programmer et envoyer le tiret**
  
 À part quelques petites différences, les étapes de programmation du tiret sont presque les mêmes que celles pour le point. 
@@ -71,7 +71,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 4
+## Step 5
 **Programmer un symbole de fin de message**
 
 Pour que ton ou ta partenaire sache que ton message est terminé, nous allons programmer un autre symbole en suivant les mêmes étapes que les deux dernières séquences.
@@ -96,7 +96,7 @@ input.onGesture(Gesture.Shake, function () {
     basic.pause(100)
 })
 ```
-## Step 5
+## Step 6
 **Programmer la radio pour recevoir des messages**
 
 1. Pour commencer, choisis le ``||radio: quand une donnée est reçu par radio (receiveNumber)||`` et dépose-le dans ton espace de travail. 
@@ -112,7 +112,7 @@ radio.onReceivedNumber(function (appelRadio) {
         
 ```
 
-## Step 6
+## Step 7
 **Programmer la radio pour recevoir des messages- *suite* **
 1. Dans le bloc ``||logic: si…alors||``, tu dois ajouter ``||basic: montrer LEDs||`` sous la section « si ». Choisis les DEL qui formeront un point. 
 2. Clique sur le + au bas du bloc ``||logic: si...alors||`` afin d'ajouter une autre condition à ta variable.
@@ -140,7 +140,7 @@ radio.onReceivedNumber(function (appelRadio) {
             `)
 ```
 
-## Step 7
+## Step 8
 
 **Programmer la radio pour recevoir des messages- *suite* **
 1. Clique sur le + encore une fois afin d'ajouter un autre bloc ``||logic: si...alors||``. Ajoute un bloc ``||logic: 0=0||``et remplace le premier **0** par ``||variable: appelRadio||``. Remplace le deuxième **0** par un **2**.
