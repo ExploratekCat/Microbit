@@ -90,10 +90,10 @@ basic.forever(function () {
 ## Étape 6
 **Ajoute des symboles de jeu**
 
-1. Choisis le bloc ``||basic: montrer l'icône (IconNames.Heart)||``  dans l'onglet Base et insère-le en dessous du premier bloc ``||logic: si patate = 0||``, puis choisis l'icône du crâne.
+1. Choisis le bloc ``||basic: montrer icône (IconNames.Heart)||``  dans l'onglet Base et insère-le en dessous du premier bloc ``||logic: si patate = 0||``, puis choisis l'icône du crâne.
 2. Dans l'onglet Base, fais glisser le bloc ``||basic: effacer l'écran||`` et insère-le sous le deuxième bloc ``||Logic: si alors ||``. Change le 0 à -1.
 2. Dans le troisième bloc ``||logic: si alors||``, change le ``||logic: ""=""||``à ``||logic: "">""||``.
-3. Dans l'onglet Base, fais glisser un bloc ``||basic: montrer l'icône (IconNames.Heart)||`` pour l'insérer sous le troisième bloc ``||logic: si alors||`` puis choisis l'icône qui te fait penser à une patate.
+3. Dans l'onglet Base, fais glisser un bloc ``||basic: montrer icône (IconNames.Heart)||`` pour l'insérer sous le troisième bloc ``||logic: si alors||`` puis choisis l'icône qui te fait penser à une patate.
 4. Dans l'onglet Variables, ajoute un bloc ``||variables: modifier patate de 1||`` puis modifie le chiffre à -1 .
 
 
