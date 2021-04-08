@@ -77,15 +77,6 @@ input.onButtonPressed(Button.A, function () {
 3. In the first ``||logic: if-0-then||`` block, replace the first 0 with a ``||variable:potato||``variable 
 4. Select the ``||basic: showIcon(IconNames.Skull)||`` block from Basics, and add it underneath the ``||logic: if potato = 0||`` block. Choose the Skull icon. 
 
-```blocks
-basic.forever(function () {
-    if (Potato == 0) {
-        basic.showIcon(IconNames.Skull)
-    }
-})
- ```
-
-
 ## Step 6:
 **Add display symbols- *continued* **
 
