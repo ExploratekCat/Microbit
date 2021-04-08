@@ -96,6 +96,7 @@ basic.forever(function () {
 8. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
 
 
+
 ```blocks
 basic.forever(function () {
     if (Potato == 0) {
