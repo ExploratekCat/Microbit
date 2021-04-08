@@ -17,7 +17,6 @@ Try not to be holding the potato when the timer ends.
 3. In the radio tab, select the ``||radio: radio group||`` block. 
 4. Change the number for the one given to you by your teacher. 
 
-
 ```blocks
 let Potato = 0
 Potato = -1
@@ -77,7 +76,6 @@ input.onButtonPressed(Button.A, function () {
 2. From the logic tab, nest in the ``||logic: if true then||``, then add ``||logic: 0 = 0||`` block, repeat two more times
 3. In the first ``||logic: if-0-then||`` block, replace the first 0 with a ``||variable:potato||``variable 
 
-
 ```blocks
 basic.forever(function () {
     if (Potato == 0) {
@@ -94,8 +92,6 @@ basic.forever(function () {
 6. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
 7. Drag a ``||basic: showIcon(IconNames.Target)||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
 8. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
-
-
 
 ```blocks
 basic.forever(function () {
@@ -121,5 +117,3 @@ Congratulations, you have completed the Hot Potato Game, now it's time to play!
 - Unplug the micro:bit from the computer and add the battery pack. 
 - Try it out against another player who also has a coded micro:bit in the same radio group.   
 - Could you add a third or fourth player?
-
-
