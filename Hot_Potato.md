@@ -108,6 +108,11 @@ basic.forever(function () {
 })
 ```
 
+```ghost
+basic.showIcon(IconNames.Skull)
+basic.showIcon(IconNames.Target)
+```
+
 
 ## Step 7: 
 
