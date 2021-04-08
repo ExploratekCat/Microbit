@@ -105,8 +105,6 @@ input.onGesture(Gesture.Shake, function () {
 3. You need to change the true variable in your logic function. Place ``||logic: 0=0||`` over ``||logic: true||``.
 4. Drag in the ``||variable: radio received||``into the first 0 of the ``||logic: 0||`` of the function you just added 
 
-
-
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
@@ -139,6 +137,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
+    }
+})
 ```
 
 ## Step 7
