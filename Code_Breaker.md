@@ -21,9 +21,9 @@ radio.setGroup(1)
 Next, code the dot signal. This will get sent to your partner. 
 
 1. Drag in the ``||input: on button A pressed||`` to your workspace. 
-2. Next, drag in the ``||basic:Show leds||`` and nest it in ``||input: on button A pressed||``. 
+2. Next, drag in the ``||basic: showLeds||`` and nest it in ``||input: on button A pressed||``. 
 3. Select the squares you want to light up. Make sure it's in the shape of a dot. 
-4. In the radio function, select the ``||radio: radio send number (0)||``. Place this under the ``||basic: show leds||``.
+4. In the radio function, select the ``||radio: radio send number (0)||``. Place this under the ``||basic: showLeds||``.
 5. Add the ``||basic: pause (ms)||`` to the sequence. 
 6. Finally, add a second ``||basic: clearScreen||`` and ``||basic: pause (ms)||`` to end your  sequence. This will create a pause between your symbols. 
 
@@ -75,7 +75,7 @@ input.onButtonPressed(Button.B, function () {
 So your partner knows when your message is finished, we are going to code one more symbol, a gap known in Morse code as a stop, doing the exact same thing as the last two sequences.
 
 1. Drag in ``||input: on shake||``. 
-2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make an X. 
+2. Add new ``||basic: showLeds||`` to this sequence. Select the squares to make an X. 
 3. Add ``||radio: radio send number||``. Change the 0 to a 2. 
 4. Next, add ``||basic: pause(ms)||``. 
 5. Finally, add blank ``||basic: clearScreen||`` and ``||basic: pause (ms)||`` to finish this sequence.
@@ -116,10 +116,10 @@ radio.onReceivedNumber(function (receivedNumber) {
 ## Step 6
 **Create your Morse Code receiver- *continued* **
 
-1. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot.  
+1. Within ``||logic: if…then||`` we need to add ``||basic: showLeds||`` under the "if" section. Select all the leds to make a dot.  
 2. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
 3. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||`` by dragging it. Change the second 0 to a 1. 
-4. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
+4. Add a second ``||basic: showLeds||`` to your sequence. Select the squares to make a dash. 
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -145,7 +145,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 **Create your Morse Code receiver- *continued* **
 1. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
-2. Add ``||basic: show leds||`` and select the squares to make your X symbol.
+2. Add ``||basic: showLeds||`` and select the squares to make your X symbol.
 3. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: clearScreen||``.   
 
 ```blocks

@@ -89,11 +89,12 @@ basic.forever(function () {
 ## Step 6:
 **Add display symbols- *continued* **
 
-1. Select the ``||basic: showIcon||`` block from Basics, and add it underneath the first ``||logic: if potato = 0||`` block. Choose the Skull icon. 
-2. Drag in ``||basic: clear screen||`` block from Basics under the second ``||Logic:if then||`` block
-3. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
-4. Drag a ``||basic: showIcon||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
-5. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
+4.  Select the ``||basic: showIcon(IconNames.Skull)||`` block from Basics, and add it underneath the first ``||logic: if potato = 0||`` block. Choose the Skull icon. 
+5. Drag in ``||basic: clearScreen||`` block from Basics under the second ``||Logic:if then||`` block
+6. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
+7. Drag a ``||basic: showIcon(IconNames.Target)||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
+8. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
+
 
 
 ```blocks
