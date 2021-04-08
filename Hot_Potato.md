@@ -68,30 +68,33 @@ input.onButtonPressed(Button.A, function () {
 ## Step 5: 
 **Define what the potato is doing**
 
-- Checks if the game is done then displays loosing screen
+- Checks if the game is done then displays the losing screen
 - Checks that the players doesn't have the potato, if so displays nothing
 - Checks if you are holding the potato, then counts down the timer
 
 1. Drag from the Basic tab the ``||basic: forever||`` block, unthetered
-2. From the logic tab, nest in the ``||logic: if true then||``, then add ``||logic: 0 = 0||`` block, repeat two more times
+2. From the logic tab, nest in the ``||logic: if true then||``, then add ``||logic: 0 = 0||`` block
 3. In the first ``||logic: if-0-then||`` block, replace the first 0 with a ``||variable:potato||``variable 
+4. Select the ``||basic: showIcon(IconNames.Skull)||`` block from Basics, and add it underneath the ``||logic: if potato = 0||`` block. Choose the Skull icon. 
 
 ```blocks
 basic.forever(function () {
     if (Potato == 0) {
- if (Potato == 0) {
- if (Potato == 0) {
+        basic.showIcon(IconNames.Skull)
+    }
+})
  ```
 
 
 ## Step 6:
 **Add display symbols- *continued* **
 
-4.  Select the ``||basic: showIcon(IconNames.Skull)||`` block from Basics, and add it underneath the first ``||logic: if potato = 0||`` block. Choose the Skull icon. 
-5. Drag in ``||basic: clearScreen||`` block from Basics under the second ``||Logic:if then||`` block
-6. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
-7. Drag a ``||basic: showIcon(IconNames.Target)||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
-8. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
+5. From the logic tab, nest in the ``||logic: if true then||``, then add ``||logic: 0 = 0||`` block
+6. Drag in ``||basic: clearScreen||`` block from Basics under the second ``||Logic:if then||`` block
+7. From the logic tab, nest in the ``||logic: if true then||``, then add ``||logic: 0 = 0||`` block
+8. In the third ``||logic: if then||`` block, change the ``||logic: ""=""||`` symbol for the ``||logic: "">""||``symbol
+9. Drag a ``||basic: showIcon(IconNames.Target)||`` block from basic below the third ``||logic: if-then||`` and select an image that reminds you of a potato
+10. From the variable tab, add a ``||variables: change potato by 1||`` block, and modify the number to -1
 
 ```blocks
 basic.forever(function () {
