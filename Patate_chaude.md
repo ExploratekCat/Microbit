@@ -76,25 +76,19 @@ input.onButtonPressed(Button.A, function () {
 - 	Si le joueur a la patate, un décompte commencera.
 
 1.	Dans l'onglet Base, fais glisser le bloc ``||basic: toujours||``, sans le lier.
-2.	Dans l'onglet Logique, emboîte un bloc ``||logic: si vrai alors||``. Remplace la variable « vrai » par ``||logic: 0 = 0||``. Ajoute deux autres de ces blocs.
+2.	Dans l'onglet Logique, emboîte un bloc ``||logic: si vrai alors||``. Remplace la variable « vrai » par ``||logic: 0 = 0||``. 
 3.	Dans le premier bloc ``||logic: si-0-alors||``, remplace le premier 0 par une variable ``||variable: patate||``.
-
-```blocks
-basic.forever(function () {
-    if (Potato == 0) {
- if (Potato == 0) {
- if (Potato == 0) {
- ```
+4.	Choisis le bloc ``||basic: showIcon(showIcon.Skull)||``  dans l'onglet Base et insère-le en dessous du premier bloc ``||logic: si patate = 0||``, puis choisis l'icône du crâne.
 
 
 ## Étape 6
 **Ajoute des symboles de jeu**
 
-1. Choisis le bloc ``||basic: showIcon(showIcon.Skull)||``  dans l'onglet Base et insère-le en dessous du premier bloc ``||logic: si patate = 0||``, puis choisis l'icône du crâne.
-2. Dans l'onglet Base, fais glisser le bloc ``||basic: effacer l'écran||`` et insère-le sous le deuxième bloc ``||Logic: si alors ||``. Change le 0 à -1.
-2. Dans le troisième bloc ``||logic: si alors||``, change le ``||logic: ""=""||``à ``||logic: "">""||``.
-3. Dans l'onglet Base, fais glisser un bloc ``||basic: showIcon(showIcon.Target)||`` pour l'insérer sous le troisième bloc ``||logic: si alors||`` puis choisis l'icône qui te fait penser à une patate.
-4. Dans l'onglet Variables, ajoute un bloc ``||variables: modifier patate de 1||`` puis modifie le chiffre à -1 .
+2. Dans l'onglet Logique, emboîte un bloc ``||logic: si vrai alors||``. Remplace la variable « vrai » par ``||logic: 0 = 0||``. 
+3. Dans l'onglet Base, fais glisser le bloc ``||basic: effacer l'écran||`` et insère-le sous le deuxième bloc ``||Logic: si alors ||``. Change le 0 à -1.
+4. Emboîte un troisième bloc ``||logic: si alors||``, change le ``||logic: ""=""||``à ``||logic: "">""||``.
+5. Dans l'onglet Base, fais glisser un bloc ``||basic: showIcon(showIcon.Target)||`` pour l'insérer sous le troisième bloc ``||logic: si alors||`` puis choisis l'icône qui te fait penser à une patate.
+6. Dans l'onglet Variables, ajoute un bloc ``||variables: modifier patate de 1||`` puis modifie le chiffre à -1 .
 
 
 ```blocks
